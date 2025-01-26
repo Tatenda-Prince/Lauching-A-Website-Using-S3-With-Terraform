@@ -28,8 +28,10 @@ Now that we have some background on what S3 is let’s launch our website.
 6.IDE: In my opinion, the VS Code Editor stands out as the top pick for an Integrated Development Environment (IDE).
 
 
-# Step 1: To create the content for your static website, clone this repository below 
+## Step 1: To create the content for your static website
 
+ Copy and paste the link and clone the repository.
+ 
 ```language
 git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform.git
 ```
