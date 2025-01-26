@@ -205,7 +205,7 @@ terraform init
 ```
 Upon completion of the initialization process, a successful prompt will be displayed, as shown below.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/1b4f50f53e3ca398228ddf080372f00c76bc6330/img/Screenshot%202025-01-26%20112352.png)
 
 Next, let’s ensure that our code does not contain any syntax errors by running the following command —
 
