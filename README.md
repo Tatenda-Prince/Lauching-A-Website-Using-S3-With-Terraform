@@ -243,7 +243,7 @@ Terraform will initiate the process of applying all the changes to the infrastru
 ![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/a7f6d7adc2102008743b8e59e9b387fc2ad65c76/img/Screenshot%202025-01-26%20113217.png)
 
 
-Success!
+## Success!
 
 The process should now conclude with a message indicating “Apply complete”, stating the total number of added, modified, and destroyed resources, accompanied by several resource outputs.
 
@@ -260,7 +260,7 @@ Please copy and save the Website URL, which will be required to access the web p
 
 ## Step 5: Verify creation of our website and the S3 bucket 
 
-In your local web browser, paste that output website Url  and verify that the website is working properly.
+In your local web browser, paste that output website URL and verify that the website is working properly.
 
 Note — Make sure to use the “http://” protocol and not https:// to reach the website.
 
