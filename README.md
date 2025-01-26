@@ -26,3 +26,5 @@ Now that we have some background on what S3 is let’s launch our website.
 5.Basic Understanding of Terraform and AWS: Familiarize yourself with Terraform basics and have a basic understanding of AWS services, particularly S3.
 
 6.IDE: In my opinion, the VS Code Editor stands out as the top pick for an Integrated Development Environment (IDE).
+
+
