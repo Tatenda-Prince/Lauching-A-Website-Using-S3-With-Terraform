@@ -292,7 +292,7 @@ In the AWS Management Console, Navigate to S3 and check if your bucket was succe
 
 2. Buckey Policy Section
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/b02b39dc581322a9cb9cdce467edea799f832031/img/Screenshot%202025-01-26%20115258.png)
 
 
 # Congratulations!
