@@ -250,7 +250,7 @@ The process should now conclude with a message indicating “Apply complete”, 
 Please copy and save the Website URL, which will be required to access the web page from the browser.
 
 
-![image_alt]() 
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/e1b3eb9a5950dea16725cc304f7a15e36660686a/img/Screenshot%202025-01-26%20113558.png) 
 
 
 
