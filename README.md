@@ -286,7 +286,7 @@ In the AWS Management Console, Navigate to S3 and check if your bucket was succe
 
 2.Static Website Hosting Section
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/1452fc874805c1d47a621c443add0e242638eb68/img/Screenshot%202025-01-26%20115222.png)
 
 
 
