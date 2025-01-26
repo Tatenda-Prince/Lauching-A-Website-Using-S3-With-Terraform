@@ -36,9 +36,9 @@ Copy and paste the link and clone the repository and copy all the file to your l
 git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform.git
 ```
 
-1. Prepare HTML Files: Create the HTML files for your website content. Place these files in the same directory where your Terraform configuration files are located.
+1.Prepare HTML Files: Create the HTML files for your website content. Place these files in the same directory where your Terraform configuration files are located.
 
-2. Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
+2.Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
 
 
 ![image_alt]()
@@ -47,10 +47,10 @@ git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Ter
 ## Step 2: Terraform Configuration File Syntax
 
 
-1. File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
+1.File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
 
 
-2. File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
+2.File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
 
 For all my terraform files I decided to create a directory where I will store all of my files, just to keep my code nice and tidy.
 
@@ -73,7 +73,7 @@ touch output.tf
 
 ## Step 3: Customize your environment by defining your configuration settings within the IDE’s dedicated files.
 
-1. Define Provider Configuration: Create a file named “provider.tf” in your project directory and add the following code to specify the AWS provider and desired region:
+1.Define Provider Configuration: Create a file named “provider.tf” in your project directory and add the following code to specify the AWS provider and desired region:
 
 ```langauge
 
@@ -92,7 +92,7 @@ provider "aws" {
 ```
 
 
-2. This Terraform configuration sets up a static website hosted on AWS S3. It creates an S3 bucket with a public-read ACL, configures a bucket policy to allow public access to its objects, and enables static website hosting with "index.html" as the default page. 
+2.This Terraform configuration sets up a static website hosted on AWS S3. It creates an S3 bucket with a public-read ACL, configures a bucket policy to allow public access to its objects, and enables static website hosting with "index.html" as the default page. 
 
 The aws_s3_object resource uploads website files retrieved from a specified module (hashicorp/dir/template) into the bucket. 
 
@@ -158,7 +158,7 @@ resource "aws_s3_object" "hosting_bucket_files" {
 }
 ```
 
-3. This code snippet defines an output block in Terraform, which is used to display or export specific values from a Terraform configuration. The output "website_url" block is named "website_url" and has a description explaining that it represents the URL of the website.
+3.This code snippet defines an output block in Terraform, which is used to display or export specific values from a Terraform configuration. The output "website_url" block is named "website_url" and has a description explaining that it represents the URL of the website.
 
 The value assigned to this output is derived from the website_endpoint attribute of the aws_s3_bucket_website_configuration resource. This resource likely configures an S3 bucket for static website hosting on AWS. When Terraform applies this configuration, it retrieves the S3 bucket's website endpoint URL (the public URL where the static website can be accessed) and outputs it.
 
@@ -179,7 +179,7 @@ aws_region = "us-east-1"
 bucket_name = "tatenda-web-hosting-bucket"
 ```
 
-5. This variable.tf code defines two input variables for a Terraform configuration. The first variable, aws_region, is a string used to specify the AWS region where resources will be deployed. The second variable, bucket_name, is also a string and represents the name of an AWS S3 bucket. Both variables have descriptions to clarify their purpose, and their types are explicitly set as string. This makes the Terraform configuration more flexible by allowing users to provide these values dynamically.
+5.This variable.tf code defines two input variables for a Terraform configuration. The first variable, aws_region, is a string used to specify the AWS region where resources will be deployed. The second variable, bucket_name, is also a string and represents the name of an AWS S3 bucket. Both variables have descriptions to clarify their purpose, and their types are explicitly set as string. This makes the Terraform configuration more flexible by allowing users to provide these values dynamically.
 
 ```language
 variable "aws_region" {
