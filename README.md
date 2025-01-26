@@ -30,7 +30,7 @@ Now that we have some background on what S3 is let’s launch our website.
 
 ## Step 1: To create the content for your static website
 
-Copy and paste the link and clone the repository and copy all the file to your local machine.
+Copy and paste the link and clone the repository and copy all the files to your local machine.
  
 ```language
 git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform.git
