@@ -240,7 +240,7 @@ terraform apply
 
 Terraform will initiate the process of applying all the changes to the infrastructure. Kindly wait for a few seconds for the deployment process to complete.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/a7f6d7adc2102008743b8e59e9b387fc2ad65c76/img/Screenshot%202025-01-26%20113217.png)
 
 
 Success!
