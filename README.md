@@ -195,6 +195,125 @@ variable "bucket_name" {
 }
 ```
 
+## Step 4: Run Terraform workflow to initialize, validate, plan then apply
+
+In your IDEterminal, to initialize the necessary providers, execute the following command in your IDE terminal —
+
+```language
+terraform init
+
+```
+Upon completion of the initialization process, a successful prompt will be displayed, as shown below.
+
+![image_alt]()
+
+Next, let’s ensure that our code does not contain any syntax errors by running the following command —
+
+```language
+terraform validate
+
+```
+The command should generate a success message, confirming that it is valid, as demonstrated below.
+
+![image_alt]()
+
+
+Let’s now execute the following command to generate a list of all the modifications that Terraform will apply. —
+
+```language
+terraform plan
+
+```
+
+The list of changes that Terraform is anticipated to apply to the infrastructure resources should be displayed. The “+” sign indicates what will be added, while the “-” sign indicates what will be removed.
+
+![image_alt]()
+
+
+Now, let’s deploy this infrastructure! Execute the following command to apply the changes and deploy the resources.
+
+Note — Make sure to type “yes” to agree to the changes after running this command
+
+```langauage
+terraform apply
+```
+
+Terraform will initiate the process of applying all the changes to the infrastructure. Kindly wait for a few seconds for the deployment process to complete.
+
+![image_alt]()
+
+
+Success!
+
+The process should now conclude with a message indicating “Apply complete”, stating the total number of added, modified, and destroyed resources, accompanied by several resource outputs.
+
+Please copy and save the Website URL, which will be required to access the web page from the browser.
+
+
+![image_alt]() 
+
+
+
+
+
+
+
+## Step 5: Verify creation of our website and the S3 bucket 
+
+In your local web browser, paste that output website Url  and verify that the website is working properly.
+
+Note — Make sure to use the “http://” protocol and not https:// to reach the website.
+
+
+
+```language
+ http://tatenda-web-hosting-bucket.s3-website-us-east-1.amazonaws.com
+
+```
+
+
+ ## AWS Console
+ 
+In the AWS Management Console, Navigate to S3 and check if your bucket was successful created.
+
+
+
+1.Bucket Section created successfully
+
+
+![image_alt]()
+
+
+2.Static Website Hosting Section
+
+![image_alt]()
+
+
+
+2. Buckey Policy Section
+
+![image_alt]()
+
+
+# Congratulations!
+
+
+You’ve successfully completed “Terraforming with S3”. You’ve learned how to host a static webiste on amazon S3 using terraform for automation which makes it easy to build up and destroy aws infrastructure effectively. 
+
+# Clean up 
+
+
+## Destroy infrastructure
+
+```language
+
+terraform destroy
+
+```
+
+Wait for it to complete. At the end, you should receive a prompt stating Destroy complete along with how many resources were destroyed.
+
+
 
 
 
