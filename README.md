@@ -272,6 +272,11 @@ Note — Make sure to use the “http://” protocol and not https:// to reach t
 ```
 
 
+![image_alt]()
+
+
+
+
  ## AWS Console
  
 In the AWS Management Console, Navigate to S3 and check if your bucket was successful created.
@@ -281,18 +286,18 @@ In the AWS Management Console, Navigate to S3 and check if your bucket was succe
 1.Bucket Section created successfully
 
 
-![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/854ef74aa22a45dd73a417b90fa96afd558ba326/img/Screenshot%202025-01-26%20114413.png)
+![image_alt]()
 
 
 2.Static Website Hosting Section
 
-![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/1452fc874805c1d47a621c443add0e242638eb68/img/Screenshot%202025-01-26%20115222.png)
+![image_alt]()
 
 
 
 2. Buckey Policy Section
 
-![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/b02b39dc581322a9cb9cdce467edea799f832031/img/Screenshot%202025-01-26%20115258.png)
+![image_alt]()
 
 
 # Congratulations!
