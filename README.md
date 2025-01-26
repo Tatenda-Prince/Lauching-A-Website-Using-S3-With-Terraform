@@ -281,7 +281,7 @@ In the AWS Management Console, Navigate to S3 and check if your bucket was succe
 1.Bucket Section created successfully
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/854ef74aa22a45dd73a417b90fa96afd558ba326/img/Screenshot%202025-01-26%20114413.png)
 
 
 2.Static Website Hosting Section
