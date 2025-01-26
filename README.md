@@ -15,17 +15,17 @@ Now that we have some background on what S3 is let’s launch our website.
 
 # Prerequisites:
 
-1.AWS Account: You need an AWS account to access AWS services, including S3.
+1. AWS Account: You need an AWS account to access AWS services, including S3.
 
-2.Terraform Installed: Ensure Terraform is installed on your local machine to define and provision AWS resources.
+2. Terraform Installed: Ensure Terraform is installed on your local machine to define and provision AWS resources.
 
-3.AWS CLI Installed and Configured: Install the AWS Command Line Interface (CLI) and configure it with your AWS credentials.
+3. AWS CLI Installed and Configured: Install the AWS Command Line Interface (CLI) and configure it with your AWS credentials.
 
-4.Static Website Files: Prepare the static website files (HTML, CSS, JavaScript, images, etc.) that you want to host.
+4. Static Website Files: Prepare the static website files (HTML, CSS, JavaScript, images, etc.) that you want to host.
 
-5.Basic Understanding of Terraform and AWS: Familiarize yourself with Terraform basics and have a basic understanding of AWS services, particularly S3.
+5. Basic Understanding of Terraform and AWS: Familiarize yourself with Terraform basics and have a basic understanding of AWS services, particularly S3.
 
-6.IDE: In my opinion, the VS Code Editor stands out as the top pick for an Integrated Development Environment (IDE).
+6. IDE: In my opinion, the VS Code Editor stands out as the top pick for an Integrated Development Environment (IDE).
 
 
 ## Step 1: To create the content for your static website
@@ -36,9 +36,9 @@ Copy and paste the link and clone the repository and copy all the file to your l
 git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform.git
 ```
 
-1.Prepare HTML Files: Create the HTML files for your website content. Place these files in the same directory where your Terraform configuration files are located.
+1. Prepare HTML Files: Create the HTML files for your website content. Place these files in the same directory where your Terraform configuration files are located.
 
-2.Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
+2. Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
 
 
 ![image_alt]()
@@ -47,10 +47,10 @@ git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Ter
 ## Step 2: Terraform Configuration File Syntax
 
 
-1.File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
+1. File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
 
 
-2.File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
+2. File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
 
 For all my terraform files I decided to create a directory where I will store all of my files, just to keep my code nice and tidy.
 
@@ -70,6 +70,134 @@ touch main.tf
 touch output.tf
 
 ```
+
+## Step 3: Customize your environment by defining your configuration settings within the IDE’s dedicated files.
+
+1. Define Provider Configuration: Create a file named “provider.tf” in your project directory and add the following code to specify the AWS provider and desired region:
+
+```langauge
+
+terraform {
+  required_providers {
+    aws = {
+        source = "hashicorp/aws"
+        version = "~>4.0"
+    }
+  }
+}
+
+provider "aws" {
+    region = var.aws_region
+}
+```
+
+
+2. This Terraform configuration sets up a static website hosted on AWS S3. It creates an S3 bucket with a public-read ACL, configures a bucket policy to allow public access to its objects, and enables static website hosting with "index.html" as the default page. 
+
+The aws_s3_object resource uploads website files retrieved from a specified module (hashicorp/dir/template) into the bucket. 
+
+The configuration ensures the site is accessible by defining the necessary policies and permissions. However, minor adjustments, such as correctly using either source or content in aws_s3_object, improving bucket policy references for consistency, and optionally adding an error document, can enhance functionality. Overall, it efficiently provisions the infrastructure for static website hosting while leveraging modular design for scalability and reuse.
+
+```language
+module "template_files" {
+    source = "hashicorp/dir/template"
+
+    base_dir = "${path.module}/web"
+  
+}
+
+resource "aws_s3_bucket" "hosting_bucket" {
+    bucket = var.bucket_name
+  
+}
+
+resource "aws_s3_bucket_acl" "hosting_bucket_acl"{
+    bucket = aws_s3_bucket.hosting_bucket.id
+    acl = "public-read"
+}
+
+resource "aws_s3_bucket_policy" "hosting_bucket_policy" {
+    bucket = aws_s3_bucket.hosting_bucket.id
+    policy = jsonencode({"Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::${var.bucket_name}/*"
+            }
+        ]
+
+    })
+}
+
+resource "aws_s3_bucket_website_configuration" "hosting_bucket_website_configuration" {
+    bucket = aws_s3_bucket.hosting_bucket.id
+
+    index_document{
+        suffix = "index.html"
+
+    }
+
+  
+}
+
+resource "aws_s3_object" "hosting_bucket_files" {
+    bucket = aws_s3_bucket.hosting_bucket.id
+
+    for_each = module.template_files.files
+
+    key = each.key
+    content_type = each.value.content_type
+
+    source  = each.value.source_path
+    content = each.value.content
+
+    etag = each.value.digests.md5
+  
+}
+```
+
+3. This code snippet defines an output block in Terraform, which is used to display or export specific values from a Terraform configuration. The output "website_url" block is named "website_url" and has a description explaining that it represents the URL of the website.
+
+The value assigned to this output is derived from the website_endpoint attribute of the aws_s3_bucket_website_configuration resource. This resource likely configures an S3 bucket for static website hosting on AWS. When Terraform applies this configuration, it retrieves the S3 bucket's website endpoint URL (the public URL where the static website can be accessed) and outputs it.
+
+This is useful for referencing the website's URL in other Terraform configurations or for providing a convenient way to view the endpoint in the Terraform output.
+
+```language
+output "website_url" {
+    description = "URL of the website"
+    value = aws_s3_bucket_website_configuration.hosting_bucket_website_configuration.website_endpoint
+}
+```
+
+4.The terraform.tfvars file sets values for variables used in your Terraform configuration. In this example, aws_region = "us-east-1" specifies the AWS region (North Virginia) where resources will be deployed, and bucket_name = "tatenda-web-hosting-bucket" defines the name of an S3 bucket, likely used for web hosting.
+
+```language
+
+aws_region = "us-east-1"
+bucket_name = "tatenda-web-hosting-bucket"
+```
+
+5. This variable.tf code defines two input variables for a Terraform configuration. The first variable, aws_region, is a string used to specify the AWS region where resources will be deployed. The second variable, bucket_name, is also a string and represents the name of an AWS S3 bucket. Both variables have descriptions to clarify their purpose, and their types are explicitly set as string. This makes the Terraform configuration more flexible by allowing users to provide these values dynamically.
+
+```language
+variable "aws_region" {
+    description = "Aws Region"
+    type = string
+  
+}
+
+variable "bucket_name" {
+    description = "Name of the bucket"
+    type = string
+  
+}
+```
+
+
+
+
 
 
 
