@@ -215,7 +215,7 @@ terraform validate
 ```
 The command should generate a success message, confirming that it is valid, as demonstrated below.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/fe31e8f8bf43675d350176c9225a03188eba904f/img/Screenshot%202025-01-26%20112638.png)
 
 
 Let’s now execute the following command to generate a list of all the modifications that Terraform will apply. —
