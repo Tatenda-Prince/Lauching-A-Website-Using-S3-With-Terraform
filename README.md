@@ -73,6 +73,8 @@ touch output.tf
 
 ## Step 3: Customize your environment by defining your configuration settings within the IDE’s dedicated files.
 
+## Main.tf
+
 1.Define Provider Configuration: Create a file named “provider.tf” in your project directory and add the following code to specify the AWS provider and desired region:
 
 ```langauge
@@ -158,6 +160,9 @@ resource "aws_s3_object" "hosting_bucket_files" {
 }
 ```
 
+
+## Output.tf
+
 3.This code snippet defines an output block in Terraform, which is used to display or export specific values from a Terraform configuration. The output "website_url" block is named "website_url" and has a description explaining that it represents the URL of the website.
 
 The value assigned to this output is derived from the website_endpoint attribute of the aws_s3_bucket_website_configuration resource. This resource likely configures an S3 bucket for static website hosting on AWS. When Terraform applies this configuration, it retrieves the S3 bucket's website endpoint URL (the public URL where the static website can be accessed) and outputs it.
@@ -171,6 +176,9 @@ output "website_url" {
 }
 ```
 
+
+## Terraform.tfvars
+
 4.The terraform.tfvars file sets values for variables used in your Terraform configuration. In this example, aws_region = "us-east-1" specifies the AWS region (North Virginia) where resources will be deployed, and bucket_name = "tatenda-web-hosting-bucket" defines the name of an S3 bucket, likely used for web hosting.
 
 ```language
@@ -178,6 +186,8 @@ output "website_url" {
 aws_region = "us-east-1"
 bucket_name = "tatenda-web-hosting-bucket"
 ```
+
+## Variable.tf
 
 5.This variable.tf code defines two input variables for a Terraform configuration. The first variable, aws_region, is a string used to specify the AWS region where resources will be deployed. The second variable, bucket_name, is also a string and represents the name of an AWS S3 bucket. Both variables have descriptions to clarify their purpose, and their types are explicitly set as string. This makes the Terraform configuration more flexible by allowing users to provide these values dynamically.
 
@@ -194,6 +204,7 @@ variable "bucket_name" {
   
 }
 ```
+
 
 ## Step 4: Run Terraform workflow to initialize, validate, plan then apply
 
