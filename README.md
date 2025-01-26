@@ -41,7 +41,7 @@ git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Ter
 2.Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/74abdd0ea7ba75516b9efccb3db9eb543f3dba9a/img/Screenshot%202025-01-26%20104444.png)
 
 
 ## Step 2: Terraform Configuration File Syntax
