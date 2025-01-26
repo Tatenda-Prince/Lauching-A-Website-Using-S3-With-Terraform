@@ -40,15 +40,36 @@ git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Ter
 
 2.Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
 
+
 ![image_alt]()
 
 
 ## Step 2: Terraform Configuration File Syntax
 
+
 1.File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
 
 
 2.File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
+
+For all my terraform files I decided to create a directory where I will store all of my files, just to keep my code nice and tidy.
+
+
+```language
+
+mkdir Terraform_S3_Web_Hosting
+
+cd Terraform_S3_Web_Hosting
+
+touch providers.tf
+
+touch variables.tf
+
+touch main.tf 
+
+touch output.tf
+
+```
 
 
 
