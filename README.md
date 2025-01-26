@@ -30,8 +30,26 @@ Now that we have some background on what S3 is let’s launch our website.
 
 ## Step 1: To create the content for your static website
 
- Copy and paste the link and clone the repository.
+Copy and paste the link and clone the repository and copy all the file to your local machine.
  
 ```language
 git clone https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform.git
 ```
+
+1.Prepare HTML Files: Create the HTML files for your website content. Place these files in the same directory where your Terraform configuration files are located.
+
+2.Main HTML File: Name your main HTML file “index.html”. This file will be the entry point for your website. Ensure it contains the necessary content and structure for your homepage.
+
+![image_alt]()
+
+
+## Step 2: Terraform Configuration File Syntax
+
+1.File Extension: Terraform configuration files should have the “.tf” extension. For example, you can name your main configuration file “main.tf”
+
+
+2.File Structure: Inside the “.tf” file, you’ll define the resources and configurations needed for your infrastructure. The syntax follows HashiCorp Configuration Language (HCL) or optionally, JSON format
+
+
+
+
