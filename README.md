@@ -227,7 +227,7 @@ terraform plan
 
 The list of changes that Terraform is anticipated to apply to the infrastructure resources should be displayed. The “+” sign indicates what will be added, while the “-” sign indicates what will be removed.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/26c4a4b15f92e0f27684462a9da3d79491ba2d10/img/Screenshot%202025-01-26%20112828.png)
 
 
 Now, let’s deploy this infrastructure! Execute the following command to apply the changes and deploy the resources.
