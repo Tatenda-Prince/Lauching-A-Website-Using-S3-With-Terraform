@@ -272,7 +272,7 @@ Note — Make sure to use the “http://” protocol and not https:// to reach t
 ```
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/43d4c42e9923114e723374b4f40fb607d7349d4a/img/Screenshot%202025-01-26%20114413.png)
 
 
 
