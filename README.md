@@ -4,7 +4,7 @@
 
 # Technical Architecture
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Lauching-A-Website-Using-S3-With-Terraform/blob/a2a41a197eb426358d375632c8b9ad6e77b6df1d/img/Screenshot%202025-02-06%20100126.png)
 
 # Introduction
 
